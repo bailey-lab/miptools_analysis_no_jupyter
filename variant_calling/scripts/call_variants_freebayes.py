@@ -2,6 +2,7 @@ import sys
 sys.path.append("/opt/src")
 import mip_functions as mip
 import subprocess
+import resource
 
 wdir=snakemake.params['wdir']
 settings_file=snakemake.params['settings_file']
@@ -22,6 +23,10 @@ errors_file="/opt/analysis/freebayes_errors.txt"
 warnings_file="/opt/analysis/freebayes_warnings.txt"
 
 #what is the purpose of the variable 'r'? I don't think it ever gets used again.
+hard_limit=int(subprocess.check_output('ulimit -Hn', shell=True).decode().strip())
+soft_limit=int(hard_limit*0.9)
+resource.setrlimit(resource.RLIMIT_NOFILE, (soft_limit, hard_limit))
+
 subprocess.call('ulimit -Sn $(ulimit -Hn)', shell=True)
 r = mip.freebayes_call(settings=settings, options=options, align=True,
 verbose=True, fastq_dir=fastq_dir, bam_dir=bam_dir, vcf_file=vcf_file,
