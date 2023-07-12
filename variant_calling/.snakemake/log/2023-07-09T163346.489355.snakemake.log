@@ -1,0 +1,40 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job stats:
+job                        count    min threads    max threads
+-----------------------  -------  -------------  -------------
+all                            1              1              1
+call_variants_freebayes        1              1              1
+copy_params                    1              1              1
+generate_tables                1              1              1
+total                          4              1              1
+
+Select jobs to execute...
+
+[Sun Jul  9 16:33:47 2023]
+rule copy_params:
+    input: variant_calling.smk, variant_calling.yaml, singularity_profile, scripts
+    output: /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/variant_calling/variant_calling.smk, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/variant_calling/variant_calling.yaml, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/variant_calling/singularity_profile, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/variant_calling/scripts
+    jobid: 1
+    reason: Updated input files: scripts, variant_calling.smk
+    resources: tmpdir=/tmp, log_dir=/nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/variant_calling
+
+
+		cp variant_calling.smk /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/variant_calling/variant_calling.smk
+		cp variant_calling.yaml /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/variant_calling/variant_calling.yaml
+		cp -r singularity_profile /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/variant_calling/singularity_profile
+		cp -r scripts /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/variant_calling/scripts
+		
+
+[Sun Jul  9 16:33:48 2023]
+rule call_variants_freebayes:
+    input: /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/aligned_haplotypes.csv
+    output: /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/contig_vcfs, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/padded_bams, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/padded_fastqs, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/variants.vcf.gz.csi, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/variants.vcf.gz, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/unfixed.vcf.gz, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/new_vcf_header.txt, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/freebayes_warnings.txt, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/freebayes_errors.txt, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/targets.vcf.gz.tbi, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/targets.vcf.gz
+    jobid: 3
+    reason: Forced execution
+    resources: tmpdir=/tmp, mem_mb=300000, mem_mib=286103, nodes=16, time_min=5760, log_dir=/nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/variant_calling
+
+Terminating processes on user request, this might take some time.
+Complete log: .snakemake/log/2023-07-09T163346.489355.snakemake.log

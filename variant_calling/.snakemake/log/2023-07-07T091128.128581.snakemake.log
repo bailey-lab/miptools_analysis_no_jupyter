@@ -1,0 +1,37 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job stats:
+job                        count    min threads    max threads
+-----------------------  -------  -------------  -------------
+all                            1              1              1
+call_variants_freebayes        1              1              1
+generate_tables                1              1              1
+total                          3              1              1
+
+Select jobs to execute...
+
+[Fri Jul  7 09:11:30 2023]
+rule call_variants_freebayes:
+    input: /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/aligned_haplotypes.csv
+    output: /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/contig_vcfs, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/padded_bams, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/padded_fastqs, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/variants.vcf.gz.csi, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/variants.vcf.gz, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/unfixed.vcf.gz, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/new_vcf_header.txt, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/freebayes_warnings.txt, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/freebayes_errors.txt, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/targets.vcf.gz.tbi, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/targets.vcf.gz
+    jobid: 3
+    reason: Missing output files: /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/variants.vcf.gz
+    resources: tmpdir=/tmp, mem_mb=300000, mem_mib=286103, nodes=16, time_min=5760, log_dir=/nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/variant_calling
+
+python /nfs/jbailey5/baileyweb/asimkin/github_pipelines/miptools_analysis_no_jupyter/variant_calling/.snakemake/scripts/tmp7pbo7orx.call_variants_freebayes.py
+Activating singularity image /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/miptools_v0.4.0.sif
+[Fri Jul  7 09:27:48 2023]
+Error in rule call_variants_freebayes:
+    jobid: 3
+    input: /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/aligned_haplotypes.csv
+    output: /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/contig_vcfs, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/padded_bams, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/padded_fastqs, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/variants.vcf.gz.csi, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/variants.vcf.gz, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/unfixed.vcf.gz, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/new_vcf_header.txt, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/freebayes_warnings.txt, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/freebayes_errors.txt, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/targets.vcf.gz.tbi, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/targets.vcf.gz
+
+RuleException:
+CalledProcessError in file /nfs/jbailey5/baileyweb/asimkin/github_pipelines/miptools_analysis_no_jupyter/variant_calling/variant_calling.smk, line 69:
+Command ' singularity  exec --home /nfs/jbailey5/baileyweb/asimkin/github_pipelines/miptools_analysis_no_jupyter/variant_calling -B /nfs/jbailey5/baileyweb/bailey_share/resources/MIP_project_resources/IBC:/opt/project_resources -B /nfs/jbailey5/baileyweb/bailey_share/resources/MIP_species_resources/pf/pf_species_resources:/opt/species_resources -B /nfs/jbailey5/baileyweb/asimkin/github_pipelines/miptools_analysis_no_jupyter/miptools_src:/opt/src -B /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled:/opt/data -B /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling:/opt/analysis --app jupyter --bind /users/asimkin/.conda/envs/snakemake/lib/python3.11/site-packages:/mnt/snakemake /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/miptools_v0.4.0.sif bash -c 'set -euo pipefail;  python /nfs/jbailey5/baileyweb/asimkin/github_pipelines/miptools_analysis_no_jupyter/variant_calling/.snakemake/scripts/tmp7pbo7orx.call_variants_freebayes.py'' returned non-zero exit status 1.
+  File "/nfs/jbailey5/baileyweb/asimkin/github_pipelines/miptools_analysis_no_jupyter/variant_calling/variant_calling.smk", line 69, in __rule_call_variants_freebayes
+  File "/users/asimkin/.conda/envs/snakemake/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-07-07T091128.128581.snakemake.log

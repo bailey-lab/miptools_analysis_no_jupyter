@@ -1,0 +1,45 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 100
+Provided resources: nodes=100, mem_mb=1000000
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+copy_params        1              1              1
+total              2              1              1
+
+Select jobs to execute...
+
+[Thu Jun 29 14:01:37 2023]
+rule copy_params:
+    input: check_run_stats.smk, check_run_stats.yaml, singularity_profile, scripts
+    output: /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats/check_run_stats.smk, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats/check_run_stats.yaml, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats/singularity_profile, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats/scripts
+    jobid: 1
+    reason: Missing output files: /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats/check_run_stats.smk
+    resources: mem_mb=4000, mem_mib=3815, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, nodes=1, time_min=120, log_dir=/nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings
+
+
+		cp check_run_stats.smk /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats/check_run_stats.smk
+		cp check_run_stats.yaml /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats/check_run_stats.yaml
+		cp -r singularity_profile /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats/singularity_profile
+		cp -r scripts /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats/scripts
+		
+Submitted job 1 with external jobid 'Submitted batch job 10316858'.
+Waiting at most 180 seconds for missing files.
+[Thu Jun 29 14:02:08 2023]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Thu Jun 29 14:02:08 2023]
+localrule all:
+    input: /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats/check_run_stats.smk, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/barcode_counts.csv, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/umi_heatmap.html
+    jobid: 0
+    reason: Input files updated by another job: /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats/check_run_stats.smk
+    resources: mem_mb=4000, mem_mib=3815, disk_mb=1000, disk_mib=954, tmpdir=/tmp, nodes=1, time_min=120, log_dir=logs
+
+[Thu Jun 29 14:02:08 2023]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2023-06-29T140136.860347.snakemake.log

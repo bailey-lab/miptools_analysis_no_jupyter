@@ -1,0 +1,58 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job stats:
+job                        count    min threads    max threads
+-----------------------  -------  -------------  -------------
+all                            1              1              1
+call_variants_freebayes        1              1              1
+copy_params                    1              1              1
+total                          3              1              1
+
+Select jobs to execute...
+
+[Tue Jun 27 15:40:37 2023]
+rule copy_params:
+    input: variant_calling.smk, variant_calling.yaml, singularity_profile, scripts
+    output: /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/run_settings/variant_calling/variant_calling.smk, /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/run_settings/variant_calling/variant_calling.yaml, /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/run_settings/variant_calling/singularity_profile, /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/run_settings/variant_calling/scripts
+    jobid: 1
+    reason: Missing output files: /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/run_settings/variant_calling/variant_calling.smk
+    resources: tmpdir=/tmp
+
+
+		cp variant_calling.smk /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/run_settings/variant_calling/variant_calling.smk
+		cp variant_calling.yaml /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/run_settings/variant_calling/variant_calling.yaml
+		cp -r singularity_profile /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/run_settings/variant_calling/singularity_profile
+		cp -r scripts /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/run_settings/variant_calling/scripts
+		
+
+[Tue Jun 27 15:40:39 2023]
+rule call_variants_freebayes:
+    input: /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/aligned_haplotypes.csv
+    output: /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/contig_vcfs, /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/padded_bams, /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/padded_fastqs, /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/variants.vcf.gz.csi, /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/variants.vcf.gz, /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/unfixed.vcf.gz, /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/new_vcf_header.txt, /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/freebayes_warnings.txt, /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/freebayes_errors.txt, /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/targets.vcf.gz.tbi, /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/targets.vcf.gz
+    jobid: 2
+    reason: Missing output files: /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/targets.vcf.gz
+    resources: tmpdir=/tmp, mem_mb=200000, mem_mib=190735, nodes=16, time_min=5760
+
+python /work/asimkin/github_pipelines/miptools_analysis_no_jupyter/variant_calling/.snakemake/scripts/tmpm9w6erdx.call_variants_freebayes.py
+Activating singularity image /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/miptools_v0.4.0.sif
+[Tue Jun 27 15:40:39 2023]
+Finished job 1.
+1 of 3 steps (33%) done
+[Tue Jun 27 15:41:11 2023]
+Finished job 2.
+2 of 3 steps (67%) done
+Select jobs to execute...
+
+[Tue Jun 27 15:41:11 2023]
+localrule all:
+    input: /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/run_settings/variant_calling/variant_calling.smk, /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/targets.vcf.gz
+    jobid: 0
+    reason: Input files updated by another job: /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/targets.vcf.gz, /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/run_settings/variant_calling/variant_calling.smk
+    resources: tmpdir=/tmp
+
+[Tue Jun 27 15:41:11 2023]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2023-06-27T154037.267443.snakemake.log

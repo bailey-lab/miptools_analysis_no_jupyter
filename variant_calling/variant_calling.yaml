@@ -1,0 +1,18 @@
+output_folder: '/nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling'
+sif_file: '/nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/miptools_v0.4.0.sif'
+freebayes_settings: ["--pooled-continuous", "--min-alternate-fraction", "0.01",
+  "--min-alternate-count", "2", "--haplotype-length", "3",
+  "--min-alternate-total", "10", "--use-best-n-alleles", "70",
+  "--genotype-qualities", "--gvcf", "--gvcf-dont-use-chunk", "true"]
+processor_number: 28
+#settings for generating final allele tables
+geneid_to_genename: /opt/project_resources/geneid_to_genename.tsv #maybe in the future this variable should be hard-coded
+target_aa_annotation: /opt/project_resources/targets.tsv #maybe in the future this variable should be hard-coded
+aggregate_nucleotides: true
+aggregate_aminoacids: false
+target_nt_annotation: null
+annotate: true
+decompose_options: []
+annotated_vcf: false
+aggregate_none: true
+output_prefix: ''

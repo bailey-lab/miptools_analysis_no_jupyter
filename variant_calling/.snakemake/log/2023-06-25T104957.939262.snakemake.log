@@ -1,0 +1,3 @@
+KeyError in file /nfs/jbailey5/baileyweb/asimkin/github_pipelines/miptools_analysis_no_jupyter/variant_calling/variant_calling.smk, line 3:
+'output_folder'
+  File "/nfs/jbailey5/baileyweb/asimkin/github_pipelines/miptools_analysis_no_jupyter/variant_calling/variant_calling.smk", line 3, in <module>

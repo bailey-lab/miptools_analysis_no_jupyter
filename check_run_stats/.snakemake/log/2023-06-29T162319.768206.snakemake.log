@@ -1,0 +1,45 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 100
+Provided resources: nodes=100, mem_mb=1000000
+Job stats:
+job                      count    min threads    max threads
+---------------------  -------  -------------  -------------
+all                          1              1              1
+copy_params                  1              1              1
+graph_barcodes               1              1              1
+map_haplotypes               1              1              1
+modify_ozkan_settings        1              1              1
+parse_info_file              1              1              1
+total                        6              1              1
+
+Select jobs to execute...
+
+[Thu Jun 29 16:23:20 2023]
+rule copy_params:
+    input: check_run_stats.smk, check_run_stats.yaml, singularity_profile, scripts
+    output: /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats.smk, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats.yaml, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/singularity_profile, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/scripts
+    jobid: 1
+    reason: Missing output files: /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats.smk
+    resources: mem_mb=4000, mem_mib=3815, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, nodes=1, time_min=120
+
+
+		cp check_run_stats.smk /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats.smk
+		cp check_run_stats.yaml /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats.yaml
+		cp -r singularity_profile /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/singularity_profile
+		cp -r scripts /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/scripts
+		
+Error submitting jobscript (exit code 127):
+
+
+[Thu Jun 29 16:23:22 2023]
+rule modify_ozkan_settings:
+    output: /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/settings.txt
+    jobid: 4
+    reason: Missing output files: /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/settings.txt
+    resources: mem_mb=4000, mem_mib=3815, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, nodes=1, time_min=120
+
+Error submitting jobscript (exit code 127):
+
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-06-29T162319.768206.snakemake.log

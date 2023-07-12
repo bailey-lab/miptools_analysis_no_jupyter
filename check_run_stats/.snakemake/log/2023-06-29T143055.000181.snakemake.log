@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /nfs/jbailey5/baileyweb/asimkin/github_pipelines/miptools_analysis_no_jupyter/check_run_stats/check_run_stats.smk, line 18:
+Missing input files for rule all:
+    affected files:
+        /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats/check_run_stats/check_run_stats.smk

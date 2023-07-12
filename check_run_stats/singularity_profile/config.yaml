@@ -1,0 +1,18 @@
+jobs: 100
+cluster: "sbatch -t {resources.time_min} -p batch --mem={resources.mem_mb} -n {resources.nodes} --output={resources.log_dir}/{rule}_{wildcards}_out --error={resources.log_dir}/{rule}_{wildcards}_error --mail-user=alfred_simkin@brown.edu --mail-type=FAIL"
+default-resources: [nodes=1, mem_mb=4000, time_min=120, log_dir='logs']
+resources: [nodes=100, mem_mb=1000000]
+
+use-singularity: True
+singularity-args: "-B /nfs/jbailey5/baileyweb/bailey_share/resources/MIP_project_resources/IBC:/opt/project_resources
+  -B /nfs/jbailey5/baileyweb/bailey_share/resources/MIP_species_resources/pf/pf_species_resources:/opt/species_resources
+  -B /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled:/opt/data
+  -B /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling:/opt/analysis
+  --app jupyter"
+printshellcmds: True
+cores: 16
+keep-going: True
+rerun-incomplete: True
+use-conda: True
+latency-wait: 180
+#restart-times: 3

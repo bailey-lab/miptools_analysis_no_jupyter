@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /work/asimkin/github_pipelines/miptools_analysis_no_jupyter/check_run_stats/check_run_stats.smk, line 16:
+Missing input files for rule all:
+    affected files:
+        sftp://mouse/nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/variant/run_settings/check_run_stats.smk

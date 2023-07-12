@@ -1,0 +1,44 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 100
+Provided resources: nodes=100, mem_mb=1000000
+Job stats:
+job                      count    min threads    max threads
+---------------------  -------  -------------  -------------
+all                          1              1              1
+copy_params                  1              1              1
+graph_barcodes               1              1              1
+map_haplotypes               1              1              1
+modify_ozkan_settings        1              1              1
+parse_info_file              1              1              1
+total                        6              1              1
+
+Select jobs to execute...
+
+[Thu Jul  6 15:29:24 2023]
+rule copy_params:
+    input: check_run_stats.smk, check_run_stats.yaml, singularity_profile, scripts
+    output: /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats/check_run_stats.smk, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats/check_run_stats.yaml, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats/singularity_profile, /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats/scripts
+    jobid: 1
+    reason: Updated input files: check_run_stats.yaml
+    resources: mem_mb=4000, mem_mib=3815, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, nodes=1, time_min=120, log_dir=/nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats
+
+
+		cp check_run_stats.smk /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats/check_run_stats.smk
+		cp check_run_stats.yaml /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats/check_run_stats.yaml
+		cp -r singularity_profile /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats/singularity_profile
+		cp -r scripts /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats/scripts
+		
+Submitted job 1 with external jobid 'Submitted batch job 10364498'.
+
+[Thu Jul  6 15:29:25 2023]
+rule modify_ozkan_settings:
+    output: /nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/settings.txt
+    jobid: 4
+    reason: Params have changed since last execution
+    resources: mem_mb=4000, mem_mib=3815, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, nodes=1, time_min=120, log_dir=/nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling/run_settings/check_run_stats
+
+Submitted job 4 with external jobid 'Submitted batch job 10364499'.
+Terminating processes on user request, this might take some time.
+No --cluster-cancel given. Will exit after finishing currently running jobs.
+Cancelling snakemake on user request.

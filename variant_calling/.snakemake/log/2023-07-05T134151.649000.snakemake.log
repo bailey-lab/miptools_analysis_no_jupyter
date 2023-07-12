@@ -1,0 +1,3 @@
+KeyError in file /work/asimkin/github_pipelines/miptools_analysis_no_jupyter/variant_calling/variant_calling.smk, line 89:
+'min_site_qual'
+  File "/work/asimkin/github_pipelines/miptools_analysis_no_jupyter/variant_calling/variant_calling.smk", line 89, in <module>
