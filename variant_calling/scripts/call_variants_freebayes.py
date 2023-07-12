@@ -27,7 +27,6 @@ hard_limit=int(subprocess.check_output('ulimit -Hn', shell=True).decode().strip(
 soft_limit=int(hard_limit*0.9)
 resource.setrlimit(resource.RLIMIT_NOFILE, (soft_limit, hard_limit))
 
-subprocess.call('ulimit -Sn $(ulimit -Hn)', shell=True)
 r = mip.freebayes_call(settings=settings, options=options, align=True,
 verbose=True, fastq_dir=fastq_dir, bam_dir=bam_dir, vcf_file=vcf_file,
 targets_file=targets_file, bam_files=None, errors_file=errors_file,
