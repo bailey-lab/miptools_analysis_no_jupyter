@@ -4,7 +4,7 @@ output_folder=config['output_folder']
 log_folder=config['output_folder']+'/run_settings/variant_calling'
 import subprocess
 subprocess.call(f'mkdir {log_folder}', shell=True)
-subprocess.call('ulimit -n 6000', shell=True)
+
 rule all:
 	input:
 		snakefile=log_folder+'/variant_calling.smk',
@@ -56,11 +56,10 @@ rule call_variants_freebayes:
 		targets_vcf=output_folder+'/targets.vcf.gz'
 	params:
 		freebayes_settings=config['freebayes_settings'],
-		processor_number=config['processor_number'],
 		wdir='/opt/analysis',
 		settings_file='settings.txt'
 	resources:
-		mem_mb=300000,
+		mem_mb=200000,
 		nodes=16,
 		time_min=5760,
 		log_dir=log_folder

@@ -1,6 +1,6 @@
 #basic parameters go here
-output_folder: '/nfs/jbailey5/baileyweb/asimkin/miptools/Mikalayi_TES/whole_dataset_wrangled/variant_calling'
-sif_file: '/nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/miptools_v0.4.0.sif'
+output_folder: '/home/alfred/simkin_bioinformatics/miptools_analysis_variant_calling_troubleshooting/Mikalayi_dataset/jupyter_analysis'
+sif_file: '/home/alfred/simkin_bioinformatics/miptools_analysis_variant_calling_troubleshooting/miptools_v0.4.0.sif'
 processor_number: 16
 bwa_extra: ['-t', '16']
 species: 'pf'
