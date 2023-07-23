@@ -10,6 +10,9 @@ Currently the first part (check_run_stats) needs to be run before the second
 part (variant_calling) can be run, and the output folder of check_run_stats
 needs to match the output folder of variant_calling.
 
+check_run_stats eventually needs to output recapture/repooling info tables. This
+should be an easy addition, but hasn't yet been implemented
+
 ## Installation
 
  - Install conda: https://github.com/conda-forge/miniforge#unix-like-platforms-mac-os--linux.
@@ -37,13 +40,7 @@ conda activate snakemake
 ```bash
 snakemake -s check_run_stats.smk --profile ../singularity_profile
 ```
- - Change directory to variant_calling and run check_run_stats with:
+ - Change directory to variant_calling and run variant_calling with:
 ```bash
-snakemake -s check_run_stats.smk --profile ../singularity_profile
+snakemake -s variant_calling.smk --profile ../singularity_profile
 ```
-
-
-## Not Implemented yet
-
-check_run_stats eventually needs to output recapture/repooling info tables. This
-should be an easy addition, but hasn't yet been implemented.
