@@ -6,6 +6,10 @@ notebook (from miptools analysis). It consists of two parts:
  - check_run_stats: checks which samples and mips worked and at what levels
  - variant_calling: calls variants and generates output tables
 
+Currently the first part (check_run_stats) needs to be run before the second
+part (variant_calling) can be run, and the output folder of check_run_stats
+needs to match the output folder of variant_calling.
+
 ## Installation
 
  - Install conda: https://github.com/conda-forge/miniforge#unix-like-platforms-mac-os--linux.
@@ -22,14 +26,22 @@ conda activate snakemake
  - Download the files of this repository into that folder
 
 ## Usage:
- - Edit the  file using the instructions in the comments. Use a text editor that outputs unix line endings (e.g. vscode, notepad++, gedit, micro, emacs, vim, vi, etc.)
+ - Edit the singularity_profile/config.yaml file to point to your files. Use a text editor that outputs unix line endings (e.g. vscode, notepad++, gedit, micro, emacs, vim, vi, etc.)
+ - Edit the variant_calling/variant_calling.yaml file to point to your files.
+ - Edit the check_run_stats/check_run_stats.yaml file to point to your files.
  - If snakemake is not your active conda environment, activate snakemake with:
 ```bash
 conda activate snakemake
 ```
- - Run snakemake with:
+ - Change directory to check_run_stats and run check_run_stats with:
 ```bash
-snakemake -s wrangle_data.smk --cores [your_desired_core_count]
+snakemake -s check_run_stats.smk --profile ../singularity_profile
+```
+ - Change directory to variant_calling and run check_run_stats with:
+```bash
+snakemake -s check_run_stats.smk --profile ../singularity_profile
+```
+
 
 ## Not Implemented yet
 
