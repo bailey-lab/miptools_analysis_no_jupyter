@@ -1,2 +1,0 @@
-SyntaxError in file /work/asimkin/github_pipelines/miptools_analysis_no_jupyter/variant_calling/variant_calling.smk, line 76:
-EOF in multi-line statement (variant_calling.smk, line 76)
