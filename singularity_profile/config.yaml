@@ -1,14 +1,14 @@
 use-singularity: True
-singularity-args: "-B /home/alfred/simkin_bioinformatics/miptools_analysis_variant_calling_troubleshooting/Mikalayi_dataset/IBC:/opt/project_resources
-  -B /home/alfred/simkin_bioinformatics/miptools_analysis_variant_calling_troubleshooting/test-data/pf_species_resources:/opt/species_resources
-  -B /home/alfred/simkin_bioinformatics/miptools_analysis_variant_calling_troubleshooting/Mikalayi_dataset:/opt/data
-  -B /home/alfred/simkin_bioinformatics/miptools_analysis_variant_calling_troubleshooting/Mikalayi_dataset/jupyter_analysis:/opt/analysis
+singularity-args: "-B /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/DR1_project_resources:/opt/project_resources
+  -B /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/pf_species_resources:/opt/species_resources
+  -B /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/new_sif_new_wrangler:/opt/data
+  -B /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/no_jupyter_analysis:/opt/analysis
   --app jupyter"
 printshellcmds: True
 cores: 16
 keep-going: True
 rerun-incomplete: True
 use-conda: True
-latency-wait: 20
+latency-wait: 60
 #keep-incomplete: True
 #restart-times: 3
