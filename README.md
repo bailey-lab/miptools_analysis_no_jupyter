@@ -1,17 +1,15 @@
 # miptools_analysis_no_jupyter
 
 This is a snakemake pipeline for running a modified analysis_template_with_qual
-notebook (from miptools analysis). It consists of two parts:
+notebook (from miptools analysis). It consists of three parts:
 
+ - setup_run: creates a singularity profile for running remaining steps
  - check_run_stats: checks which samples and mips worked and at what levels
  - variant_calling: calls variants and generates output tables
 
-Currently the first part (check_run_stats) needs to be run before the second
-part (variant_calling) can be run, and the output folder of check_run_stats
-needs to match the output folder of variant_calling.
-
-check_run_stats eventually needs to output recapture/repooling info tables. This
-should be an easy addition, but hasn't yet been implemented
+Currently each step requires that the previous steps have run - you can't check
+run stats without setting up the singularity profile, and you can't run the
+variant calling step without setting up the run and checking run stats.
 
 ## Installation
 
@@ -29,18 +27,25 @@ conda activate snakemake
  - Download the files of this repository into that folder
 
 ## Usage:
- - Edit the singularity_profile/config.yaml file to point to your files. Use a text editor that outputs unix line endings (e.g. vscode, notepad++, gedit, micro, emacs, vim, vi, etc.)
- - Edit the variant_calling/variant_calling.yaml file to point to your files.
- - Edit the check_run_stats/check_run_stats.yaml file to point to your files.
+ - Edit the miptools_analysis_no_jupyter.yaml file to point to your files.
+Use a text editor that outputs unix line endings (e.g. vscode, notepad++, gedit, micro, emacs, vim, vi, etc.)
  - If snakemake is not your active conda environment, activate snakemake with:
 ```bash
 conda activate snakemake
 ```
- - Change directory to check_run_stats and run check_run_stats with:
+ - To setup your singularity environment, use:
 ```bash
-snakemake -s check_run_stats.smk --profile ../singularity_profile
+snakemake -s setup_run.smk --cores 4
 ```
- - Change directory to variant_calling and run variant_calling with:
+ - To check run stats, use:
 ```bash
-snakemake -s variant_calling.smk --profile ../singularity_profile
+snakemake -s check_run_stats.smk --profile singularity_profile
 ```
+ - To run variant calling, use:
+```bash
+snakemake -s variant_calling.smk --profile singularity_profile
+```
+ - to run all three steps at once, use:
+ ```bash
+ bash run_all_steps.sh
+ ```
