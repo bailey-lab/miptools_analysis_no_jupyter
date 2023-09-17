@@ -4,17 +4,19 @@
 #and named sample_sheet.tsv. If you wrangled in some other way, rename your
 #sample sheet as sample_sheet.tsv and put it in the wrangler output folder
 
-project_resources: /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/DR1_project_resources
-species_resources: /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/pf_species_resources
-wrangler_directory: /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/new_sif_new_wrangler
-wrangled_file: allInfo.tsv.gz
-output_directory: /nfs/jbailey5/baileyweb/asimkin/miptools/miptools_tutorial/test-data/no_jupyter_analysis
+project_resources: /nfs/jbailey5/baileyweb/bailey_share/resources/MIP_project_resources/DR2
+species_resources: /nfs/jbailey5/baileyweb/bailey_share/resources/MIP_species_resources/pf/Pf_3D7
+wrangler_directory: /nfs/jbailey5/baileyweb/asimkin/tes_2017_mikalayi/miptools/all_study_sites_DR2_200000000000000000umi_10_cpu/snakemake_oscar
+wrangled_file: allInfo.tab.txt
+output_directory: /nfs/jbailey5/baileyweb/asimkin/tes_2017_mikalayi/miptools/all_study_sites_DR2_200000000000000000umi_10_cpu/variant
 sif_file: '/nfs/jbailey5/baileyweb/bailey_share/bin/miptools_dev_plus_bcl2fastq_23-08-25.sif'
 species: 'pf'
-sample_groups: [['JJJ', 'DR1,VAR4']]
+
+#the probe sets here need to be an exact match for the values in your sample sheet - this needs to be fixed (what if some samples use one subset of probes and others use others)
+sample_groups: [['JJJ', 'DR2,HAPDR,HEOME96,IBC']]
 processor_number: 16
 freebayes_threads: 8
-probe_sets_used: ['DR1']
+probe_sets_used: ['DR2']
 
 #This block is for checking basic run stats with check_run_stats.smk
 #bwa settings go here
