@@ -6,14 +6,14 @@
 
 project_resources: /nfs/jbailey5/baileyweb/bailey_share/resources/MIP_project_resources/DR2
 species_resources: /nfs/jbailey5/baileyweb/bailey_share/resources/MIP_species_resources/pf/Pf_3D7
-wrangler_directory: /nfs/jbailey5/baileyweb/asimkin/tes_2017_mikalayi/miptools/all_study_sites_DR2_200000000000000000umi_10_cpu/snakemake_oscar
-wrangled_file: allInfo.tab.txt
-output_directory: /nfs/jbailey5/baileyweb/asimkin/tes_2017_mikalayi/miptools/all_study_sites_DR2_200000000000000000umi_10_cpu/variant
+wrangler_directory: /nfs/jbailey5/baileyweb/asimkin/MSMT_561H_paper/DR2_wrangler_output
+wrangled_file: allInfo.tsv.gz
+output_directory: /nfs/jbailey5/baileyweb/asimkin/MSMT_561H_paper/variant
 sif_file: '/nfs/jbailey5/baileyweb/bailey_share/bin/miptools_dev_plus_bcl2fastq_23-08-25.sif'
 species: 'pf'
 
 #the probe sets here need to be an exact match for the values in your sample sheet - this needs to be fixed (what if some samples use one subset of probes and others use others)
-sample_groups: [['JJJ', 'DR2,HAPDR,HEOME96,IBC']]
+sample_groups: [['2021-MSMT', 'DR2,HAP,IBC']]
 processor_number: 16
 freebayes_threads: 8
 probe_sets_used: ['DR2']
@@ -47,12 +47,12 @@ freebayes_settings: ["--pooled-continuous", "--min-alternate-fraction", "0.01",
   "--genotype-qualities", "--gvcf", "--gvcf-dont-use-chunk", "true"]
 
 #settings for generating final allele tables
-geneid_to_genename: /opt/project_resources/geneid_to_genename.tsv
-target_aa_annotation: /opt/project_resources/targets.tsv
+geneid_to_genename: null
+target_aa_annotation: null
 aggregate_nucleotides: true
-aggregate_aminoacids: true
+aggregate_aminoacids: false
 target_nt_annotation: null
-annotate: true
+annotate: false
 decompose_options: []
 annotated_vcf: false
 aggregate_none: true

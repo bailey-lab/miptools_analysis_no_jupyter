@@ -6,12 +6,12 @@ wdir=snakemake.params['wdir']
 settings_file=snakemake.params['settings_file']
 options=snakemake.params['freebayes_settings']
 settings = mip.get_analysis_settings(wdir+'/'+settings_file)
+targets_file=snakemake.params.targets_file
 
 verbose=True
 fastq_dir="/opt/analysis/padded_fastqs"
 bam_dir="/opt/analysis/padded_bams"
 vcf_file="/opt/analysis/variants.vcf.gz"
-targets_file="/opt/project_resources/targets.tsv"
 errors_file="/opt/analysis/freebayes_errors.txt"
 warnings_file="/opt/analysis/freebayes_warnings.txt"
 

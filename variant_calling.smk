@@ -41,7 +41,7 @@ rule call_variants_freebayes:
 	calls variants with freebayes and produces a VCF output file
 	'''
 	input:
-		output_folder+'/aligned_haplotypes.csv'
+		output_folder+'/aligned_haplotypes.csv',
 	output:
 		contig_vcfs=directory(output_folder+'/contig_vcfs'),
 		padded_bams=directory(output_folder+'/padded_bams'),
@@ -55,6 +55,7 @@ rule call_variants_freebayes:
 		targets_index=output_folder+'/targets.vcf.gz.tbi',
 		targets_vcf=output_folder+'/targets.vcf.gz'
 	params:
+		targets_file=config['target_aa_annotation'],
 		freebayes_settings=config['freebayes_settings'],
 		wdir='/opt/analysis',
 		settings_file='settings.txt'
@@ -71,7 +72,7 @@ rule call_variants_freebayes:
 
 rule generate_tables:
 	input:
-		variants=output_folder+'/variants.vcf.gz',
+		variants=output_folder+'/variants.vcf.gz'
 	output:
 		ref_table=output_folder+'/reference_table.csv',
 		cov_table=output_folder+'/coverage_table.csv',
