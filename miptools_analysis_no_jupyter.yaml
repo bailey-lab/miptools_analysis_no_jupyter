@@ -46,7 +46,9 @@ freebayes_settings: ["--pooled-continuous", "--min-alternate-fraction", "0.01",
   "--min-alternate-total", "10", "--use-best-n-alleles", "70",
   "--genotype-qualities", "--gvcf", "--gvcf-dont-use-chunk", "true"]
 
-#settings for generating final allele tables
+#settings for generating final allele tables. Any files need to be relative to
+#sif file bindings. e.g. a file in the project_resources folder will be bound
+#as /opt/project_resources/your_file and not /actual/path/to/your_file
 geneid_to_genename: null
 target_aa_annotation: null
 aggregate_nucleotides: true
